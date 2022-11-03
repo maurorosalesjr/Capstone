@@ -1,0 +1,16 @@
+# Gaming in REACT
+
+### Pokemon RPG 2.0
+
+I am planning on creating a video game using the REACT Framework. This project will use the PokeAPI to make calls to fetch different pokemon to battle an original charecter of my design.
+
+##### MVP
+The Minimal Viable Project will include:
+* My original charaecter battling Pokemon called via the API
+* Use those battles to "Level up" and increase the main charecters stats
+* Have dynamic backgrounds that change with each new battle
+
+##### Stretch Goals
+The Strech Goals include:
+* having an overworld where my original charecter will be able to explore
+* main charecter will have special attacks
