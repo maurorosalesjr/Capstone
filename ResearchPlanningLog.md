@@ -1,3 +1,19 @@
 ## Reaserch and Planning Log for Capstone
 
 10:40 Thursday November 3rd: Created local environment for planning and research and GitHub Repo
+
+10:44 - 11:00 creating Capstone Proposale.
+
+11:00 am Google Search : creating a game in REACT
+
+11:05 started 2048 Game in React - Animated Version - Game Development in React on Youtube(https://www.youtube.com/watch?v=ca0BEH2bBLs) to start understanding the process 1hr 8min
+11:10 realized its for one game called 2048, not a sample of 2048 games done in REACT.
+
+11:10 youtube search for "creating pokemon in react"
+videos watched:
+* Build A Pokémon Application With React - Tutorial https://www.youtube.com/watch?v=o3ZUc7zH8BE
+Possibly install Axios in liue of using fetch for API calls. good video for API calls
+* So Let's Make a Pokemon Game... https://www.youtube.com/watch?v=oQPun35o8uw 
+this video is someone reacting to another video about a fan made pokemon game
+* Let's Make a Pokemon Game! https://www.youtube.com/watch?v=tGhpDOx0CMk (for ideas)
+
