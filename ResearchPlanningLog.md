@@ -25,3 +25,5 @@ Friday November 4th
 watching Pokémon JavaScript Game Tutorial with HTML Canvas https://www.youtube.com/watch?v=yP5DKzriqXA
 itch.io for free game assets - overworld
 download Tiled to build map
+oof, this creater isnt using best practices in file creation
+1024 x 576 pixels gives perfect 16:9 ratio
