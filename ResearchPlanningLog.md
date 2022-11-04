@@ -17,3 +17,10 @@ Possibly install Axios in liue of using fetch for API calls. good video for API 
 this video is someone reacting to another video about a fan made pokemon game
 * Let's Make a Pokemon Game! https://www.youtube.com/watch?v=tGhpDOx0CMk (for ideas)
 
+---------------------------------------------------------
+
+Friday November 4th
+
+8:45 am
+watching Pokémon JavaScript Game Tutorial with HTML Canvas https://www.youtube.com/watch?v=yP5DKzriqXA
+itch.io for free game assets - overworld
