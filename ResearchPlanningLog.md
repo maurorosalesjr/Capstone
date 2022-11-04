@@ -24,3 +24,4 @@ Friday November 4th
 8:45 am
 watching Pokémon JavaScript Game Tutorial with HTML Canvas https://www.youtube.com/watch?v=yP5DKzriqXA
 itch.io for free game assets - overworld
+download Tiled to build map
