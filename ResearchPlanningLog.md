@@ -32,3 +32,12 @@ oof, this creater isnt using best practices in file creation
 https://reactjsexample.com/tag/games/
 
 
+
+-----------------------------------------------------------
+Nov 25th
+
+3 pm watch more of https://www.youtube.com/watch?v=yP5DKzriqXA Pokémon JavaScript Game Tutorial with HTML Canvas
+
+
+
+
