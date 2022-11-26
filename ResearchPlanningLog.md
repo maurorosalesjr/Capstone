@@ -39,5 +39,11 @@ Nov 25th
 3 pm watch more of https://www.youtube.com/watch?v=yP5DKzriqXA Pokémon JavaScript Game Tutorial with HTML Canvas
 
 
+4:15 YouTube Search : can i make pokemon rpg in react
+
+Building a Pokemon Web App - Pokemon API ReactJS https://www.youtube.com/watch?v=QFPSIT3ZR7Q
+
+first video, used as a refresher to GET data from PokeAPI
+
 
 
