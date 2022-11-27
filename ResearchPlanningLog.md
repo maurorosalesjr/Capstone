@@ -50,5 +50,5 @@ Nov 26th
 
 starting to build environment
 
-![poke path](poke-rpg-2/src/img/potionpath.png "Draw.io of my pokemon pathways")
+![poke path](poke-rpg-2/src/img/PokePath.png "Draw.io of my pokemon pathways")
 
