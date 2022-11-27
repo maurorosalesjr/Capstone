@@ -52,3 +52,15 @@ starting to build environment
 
 ![poke path](poke-rpg-2/src/img/PokePath.png "Draw.io of my pokemon pathways")
 
+
+
+----------------------------------------------------------
+
+components needed
+-stat table(pokemon/player)
+-rpg functions
+-battle functions
+-loot table
+-backgrounds with map
+
+

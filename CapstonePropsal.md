@@ -3,6 +3,11 @@
 ### Pokemon RPG 2.0
 
 I am planning on creating a video game using the REACT Framework. This project will use the PokeAPI to make calls to fetch different pokemon to battle an original charecter of my design.
+-REACT
+-API
+-CSS
+-Javascript
+
 
 ##### MVP
 The Minimal Viable Project will include:
