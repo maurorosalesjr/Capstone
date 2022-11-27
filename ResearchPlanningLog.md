@@ -46,4 +46,9 @@ Building a Pokemon Web App - Pokemon API ReactJS https://www.youtube.com/watch?v
 first video, used as a refresher to GET data from PokeAPI
 
 
+Nov 26th
+
+starting to build environment
+
+![poke path](poke-rpg-2/src/img/potionpath.png "Draw.io of my pokemon pathways")
 
