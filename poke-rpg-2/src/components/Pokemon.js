@@ -1,8 +1,6 @@
-import React, { useEffect, useReducer } from 'react';
-import pokemonsReducer from '../reducers/pokemon-reducer';
-import { getPokemonsFailure, getPokemonsSuccess } from '../actions';
+import React, { useState  } from 'react';
 import Axios from "axios";
-import { useState } from 'react';
+
 
 
 
