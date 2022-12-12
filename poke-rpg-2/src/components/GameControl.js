@@ -1,34 +1,23 @@
 import React, { useState  }  from "react";
 import ChoosePokemon from "./Pokemon";
-
+import Loot from "./Loot";
 
 
 function GameControl() {
   const [areaSearched, setAreaSearched] = useState(false);
-  const callPokemon = ChoosePokemon.callPokemon;
+  var searchPoke = <ChoosePokemon />;
+  var searchLoot = <Loot />;
+  var [conditionMet, setConditionMet] = useState(false);
 
   const searchArea = () => {
-    var num = Math.floor((Math.random() * 20) + 1);
+    var num = parseInt(Math.floor((Math.random() * 20) + 1));
     console.log(num)
     setAreaSearched(true);
-    return num
-  }
-  const searching = (num) => {
-      if(num == 20) {
-        console.log(num)
-        return <h1>TREASURE!!</h1>
-      } else {
-        
-        console.log(num)
-        return(
-          <React.Fragment>
-            <ChoosePokemon />
-          </React.Fragment>
-        )
-      }
+    if(num == 20){
+      console.log(num)
+      return setConditionMet(true);
     }
-  
-
+  }
 
   return (
     
@@ -36,8 +25,11 @@ function GameControl() {
     {!areaSearched ? (
       <button onClick={searchArea}>Search Area</button>
     ) : (
-      searching()
-      
+      <div>
+        <React.Fragment>
+          {conditionMet ? searchLoot : searchPoke}
+        </React.Fragment>
+      </div>
     )}
     </div>
   )

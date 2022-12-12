@@ -43,11 +43,10 @@ function ChoosePokemon() {
     
       return (
         <React.Fragment>
-          <button onClick={callPokemon}>Reveal Pokemon</button>
           <div className="DisplaySection">
             {!pokemonChosen ? (
-              <h1></h1>
-            ) : (
+          <button onClick={callPokemon}>Reveal Pokemon</button>
+          ) : (
               <>
               <img src={pokemon.img} />
               <ul>
