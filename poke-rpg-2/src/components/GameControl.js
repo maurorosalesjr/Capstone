@@ -3,6 +3,7 @@ import ChoosePokemon from "./Pokemon";
 import Loot from "./Loot";
 
 
+
 function GameControl() {
   const [areaSearched, setAreaSearched] = useState(false);
   var searchPoke = <ChoosePokemon />;
@@ -11,10 +12,8 @@ function GameControl() {
 
   const searchArea = () => {
     var num = parseInt(Math.floor((Math.random() * 20) + 1));
-    console.log(num)
     setAreaSearched(true);
     if(num == 20){
-      console.log(num)
       return setConditionMet(true);
     }
   }

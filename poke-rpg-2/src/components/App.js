@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from "./Header";
 import GameControl from "./GameControl";
-// import ChoosePokemon from "./Pokemon";
+import Player from './Player';
 
 function App(){
   return (
     <React.Fragment>
       <Header />
       <GameControl />
-      {/* <ChoosePokemon /> */}
+      <Player />
     </React.Fragment>
   );
 }

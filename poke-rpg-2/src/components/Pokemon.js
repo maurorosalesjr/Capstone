@@ -1,10 +1,6 @@
 import React, { useState  } from 'react';
 import Axios from "axios";
 
-
-
-
-
 function ChoosePokemon() {
   const [pokemonChosen, setPokemonChosen] = useState(false);
   const [pokemon, setPokemon] = useState({
@@ -17,7 +13,6 @@ function ChoosePokemon() {
   })
 
   const pokemonNum =  Math.floor((Math.random() * 151) + 1);
-
 
   const callPokemon = () => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`).then(
@@ -35,12 +30,6 @@ function ChoosePokemon() {
     );
   };
 
-
-
-
-    
-
-    
       return (
         <React.Fragment>
           <div className="DisplaySection">
@@ -49,8 +38,8 @@ function ChoosePokemon() {
           ) : (
               <>
               <img src={pokemon.img} />
+              <h4>{pokemon.name}</h4>
               <ul>
-                <li>{pokemon.name}</li>
                 <li>HP: {pokemon.hp}</li>
                 <li>Attack: {pokemon.attack}</li>
                 <li>Defense: {pokemon.defense}</li>
