@@ -2,6 +2,8 @@ import React from 'react';
 import Header from "./Header";
 import GameControl from "./GameControl";
 import Player from './Player';
+import Combat from './Combat';
+
 
 function App(){
   return (
@@ -9,6 +11,7 @@ function App(){
       <Header />
       <GameControl />
       <Player />
+      <Combat />
     </React.Fragment>
   );
 }

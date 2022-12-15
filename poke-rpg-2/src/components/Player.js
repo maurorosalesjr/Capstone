@@ -3,21 +3,21 @@ import React, { useState  } from 'react';
 function Player(){
   const [characterRolled, setCharacterRolled] = useState(false);
   const [character, setCharacter] = useState({
-    hp: "",
-    attack: "",
-    defense: "",
-    speed: "",
-    gold: "",
-    weapon: "",
-    armor: "",
-    xp: "",
+    hp: Number,
+    attack: Number,
+    defense: Number,
+    speed: Number,
+    gold: Number,
+    weapon: Number,
+    armor: Number,
+    xp: Number,
   })
 
   const rollCharacter = () => {
     setCharacter({
       hp: Math.floor(Math.random() * (150-100) + 100),
-      attack: Math.floor((Math.random() * 20) + 1),
-      defense: Math.floor((Math.random() * 20) + 1),
+      attack: Math.floor(Math.random() * (50-30) + 30),
+      defense: Math.floor(Math.random() * (50-20) + 20),
       speed: Math.floor(Math.random() * (100-50) + 50),
     });
     setCharacterRolled(true);

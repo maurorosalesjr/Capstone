@@ -9,7 +9,7 @@ function Loot() {
 
 
   const lootGenerator = () => {
-    var lootable = ['1 gold', 'handfule of dust', 'basic sword', '10 gold'],
+    var lootable = ['1 gold', 'handfull of dust', 'basic sword', '10 gold'],
     lootNum = Math.floor((Math.random() * lootable.length));
     console.log(lootNum)
     setLootChosen(true);

@@ -4,12 +4,13 @@ import Axios from "axios";
 function ChoosePokemon() {
   const [pokemonChosen, setPokemonChosen] = useState(false);
   const [pokemon, setPokemon] = useState({
-    name: "",
-    hp: "",
-    attack: "",
-    defense: "",
-    speed: "",
-    img: "",
+    nameP: "",
+    hpP: Number,
+    attackP: Number,
+    defenseP: Number,
+    speedP: Number,
+    imgP: "",
+    xpP: Number,
   })
 
   const pokemonNum =  Math.floor((Math.random() * 151) + 1);
@@ -18,12 +19,13 @@ function ChoosePokemon() {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`).then(
       (response) => {
         setPokemon({
-          name: response.data.name,
-          hp: response.data.stats[0].base_stat,
-          attack: response.data.stats[1].base_stat,
-          defense: response.data.stats[2].base_stat,
-          speed: response.data.stats[5].base_stat,
-          img: response.data.sprites.front_default,
+          nameP: response.data.name,
+          hpP: response.data.stats[0].base_stat,
+          attackP: response.data.stats[1].base_stat,
+          defenseP: response.data.stats[2].base_stat,
+          speedP: response.data.stats[5].base_stat,
+          imgP: response.data.sprites.front_default,
+          xpP: response.data.base_experience,
         });
         setPokemonChosen(true);
       }
@@ -37,13 +39,14 @@ function ChoosePokemon() {
           <button onClick={callPokemon}>Reveal Pokemon</button>
           ) : (
               <>
-              <img src={pokemon.img} />
-              <h4>{pokemon.name}</h4>
+              <img src={pokemon.imgP} />
+              <h4>{pokemon.nameP}</h4>
               <ul>
-                <li>HP: {pokemon.hp}</li>
-                <li>Attack: {pokemon.attack}</li>
-                <li>Defense: {pokemon.defense}</li>
-                <li>Speed: {pokemon.speed}</li>
+                <li>HP: {pokemon.hpP}</li>
+                <li>Attack: {pokemon.attackP}</li>
+                <li>Defense: {pokemon.defenseP}</li>
+                <li>Speed: {pokemon.speedP}</li>
+                <li>{pokemon.xpP}</li>
               </ul>
               </>
             )}
