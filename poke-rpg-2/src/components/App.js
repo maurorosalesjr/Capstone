@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./Header";
 import GameControl from "./GameControl";
-import Player from './Player';
+// import Player from './Player';
 import Combat from './Combat';
 
 
@@ -10,7 +10,7 @@ function App(){
     <React.Fragment>
       <Header />
       <GameControl />
-      <Player />
+      {/* <Player /> */}
       <Combat />
     </React.Fragment>
   );
