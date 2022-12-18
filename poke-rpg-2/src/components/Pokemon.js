@@ -102,7 +102,7 @@ function ChoosePokemon() {
                 <li>Attack: {pokemon.attackP}</li>
                 <li>Defense: {pokemon.defenseP}</li>
                 <li>Speed: {pokemon.speedP}</li>
-                <li>{pokemon.xpP}</li>
+                <li>XP: {pokemon.xpP}</li>
               </ul>
               </div>
               {!attackClicked ? (

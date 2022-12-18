@@ -38,7 +38,6 @@ function Player(props){
       speed: Math.floor(Math.random() * (100-50) + 50),
     });
     setCharacterRolled(true);
-    console.log(character.hp);
   }
 
   return(
