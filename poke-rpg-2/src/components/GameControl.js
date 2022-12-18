@@ -4,13 +4,14 @@ import Loot from "./Loot";
 
 
 const buttonStyle = {
-  marginLeft: "55%",
-  marginRight: "5px",
-  marginTop: "20%",
-  zIndex: "6",
+  left: "5%",
+  zIndex: "4",
+  marginTop: "50%",
   position: "absolute",
-  width: "100px",
-  hight: "auto",
+  border: "2px solid black",
+  hight: "200px",
+  maxWidth: "25%",
+  width: "100%",
   display: "block",
 }
 

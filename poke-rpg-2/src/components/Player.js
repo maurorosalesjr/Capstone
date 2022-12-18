@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const playa = {
   left: "32%",
   zIndex: "4",
-  marginTop: "37%",
+  marginTop: "50%",
   position: "absolute",
   border: "2px solid black",
   hight: "200px",

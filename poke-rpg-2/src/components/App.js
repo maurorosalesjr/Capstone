@@ -4,14 +4,16 @@ import GameControl from "./GameControl";
 import Player from './Player';
 // import Combat from './Combat';
 import overlay from "./../img/overlay.png"
+import {background} from './sceneLoader'
 
 const overlayImg = {
 backgroundImage: `url(${overlay})`,
-zIndex: "2",
+zIndex: "1",
 position: "absolute",
-top: "0px",
+top: "10%",
 display: "block",
-width: "90%",
+maxWidth: "90%",
+width: "100%",
 marginLeft: "5%",
 }
 

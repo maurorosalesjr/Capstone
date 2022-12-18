@@ -1,6 +1,7 @@
 import React, { useState  } from 'react';
 import Axios from "axios";
 import PropTypes from "prop-types";
+import GameControl from './GameControl';
 
 const imgStlye = {
   marginLeft: "55%",
@@ -16,7 +17,7 @@ const imgStlye = {
 const pokeStats = {
   right: "5%",
   zIndex: "4",
-  marginTop: "37%",
+  marginTop: "50%",
   position: "absolute",
   border: "2px solid black",
   hight: "200px",
@@ -26,16 +27,6 @@ const pokeStats = {
   backgroundColor: "burlywood"
 }
 
-const buttonStyle = {
-  marginLeft: "55%",
-  marginRight: "5px",
-  marginTop: "20%",
-  zIndex: "6",
-  position: "absolute",
-  width: "100px",
-  hight: "auto",
-  display: "block",
-}
 
 const h4 = {
   textAlign: "center",
@@ -45,16 +36,16 @@ const h4 = {
 const attack = {
   left: "5%",
   zIndex: "4",
-  marginTop: "37%",
+  marginTop: "50%",
   position: "absolute",
   border: "2px solid black",
   hight: "200px",
   maxWidth: "25%",
   width: "100%",
   display: "block",
-  backgroundColor: "burlywood"
+
 }
-function ChoosePokemon(props) {
+function ChoosePokemon() {
   const [pokemonChosen, setPokemonChosen] = useState(false);
   const [pokemon, setPokemon] = useState({
     nameP: "",
@@ -65,6 +56,10 @@ function ChoosePokemon(props) {
     imgP: "",
     xpP: {Number},
   })
+  const [attackClicked, setAttackClicked] = useState(false);
+  var resetToGame = <React.Fragment>
+                      <GameControl />
+                    </React.Fragment>;
 
   const pokemonNum =  Math.floor((Math.random() * 151) + 1);
 
@@ -87,14 +82,16 @@ function ChoosePokemon(props) {
   };
 
   const defeatPokemon = () => {
-      setPokemon(false)
+      setPokemon(false);
+      // setPokemonChosen(false);
+      setAttackClicked(true);
   }
 
       return (
         <React.Fragment>
           <div className="DisplaySection">
             {!pokemonChosen ? (
-          <button style={buttonStyle} onClick={callPokemon}>Reveal Pokemon</button>
+          <button style={attack} onClick={callPokemon}>Reveal Pokemon</button>
           ) : (
               <>
               <img style={imgStlye} src={pokemon.imgP} />
@@ -108,7 +105,9 @@ function ChoosePokemon(props) {
                 <li>{pokemon.xpP}</li>
               </ul>
               </div>
+              {!attackClicked ? (
               <button style={attack} onClick={defeatPokemon}>Attack!!!</button>
+              ) : resetToGame}
 
 
               </>

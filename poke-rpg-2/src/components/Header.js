@@ -1,9 +1,17 @@
 import React from "react";
+import headerImage from "./../img/dungeonwall.png"
 
 const headerStyle = {
+  left: "5%",
   textAlign: "center",
   display: "block",
-  zIndex: "2",
+  zIndex: "6",
+  border: "2px solid black",
+  position: "absolute",
+  maxWidth: "90%",
+  width: "100%",
+  color: "burlywood",
+  backgroundImage: `url(${headerImage})`,
 }
 function Header() {
   return (
