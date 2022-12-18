@@ -13,7 +13,7 @@ function GameControl() {
   const searchArea = () => {
     var num = parseInt(Math.floor((Math.random() * 20) + 1));
     setAreaSearched(true);
-    if(num == 20){
+    if(num === 20){
       return setConditionMet(true);
     }
   }

@@ -1,23 +1,25 @@
 import React, { useState  } from 'react';
 import Axios from "axios";
+import PropTypes from "prop-types";
 
-function ChoosePokemon() {
+function ChoosePokemon(props) {
   const [pokemonChosen, setPokemonChosen] = useState(false);
   const [pokemon, setPokemon] = useState({
     nameP: "",
-    hpP: Number,
-    attackP: Number,
-    defenseP: Number,
-    speedP: Number,
+    hpP: {Number},
+    attackP: {Number},
+    defenseP: {Number},
+    speedP: {Number},
     imgP: "",
-    xpP: Number,
+    xpP: {Number},
   })
 
   const pokemonNum =  Math.floor((Math.random() * 151) + 1);
 
-  const callPokemon = () => {
+  const callPokemon = (event) => {
     Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`).then(
-      (response) => {
+      (response) => { 
+        event.preventDefault();
         setPokemon({
           nameP: response.data.name,
           hpP: response.data.stats[0].base_stat,
@@ -53,5 +55,17 @@ function ChoosePokemon() {
           </div>
         </React.Fragment>
       );
+}
+
+ChoosePokemon.propTypes = {
+  nameP: PropTypes.string.isRequired,
+  hpP: PropTypes.string.isRequired,
+  attackP: PropTypes.number.isRequired,
+  defenseP: PropTypes.number.isRequired,
+  speedP: PropTypes.number.isRequired,
+  imgP: PropTypes.string.isRequired,
+  xp: PropTypes.number.isRequired,
+  callPokemon: PropTypes.func,
+
 }
 export default ChoosePokemon;

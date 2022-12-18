@@ -1,48 +1,85 @@
 import React, { useState  } from 'react';
 import Player from './Player';
 import ChoosePokemon from './Pokemon';
+import PropTypes from "prop-types";
 
-function Combat(){
-const [isPokeDead, setDeadPoke] = useState(false);
-const [isPlayerDead, setDeadPlayer] = useState(false);
-const [activePlayer, setActivePlayer] = useState(Player.character);
-const [activePoke, setActivePoke] = useState(ChoosePokemon.pokemon);
-const name = ChoosePokemon.name;
-const hpP = parseInt(ChoosePokemon.hpP);
-const attackP = parseInt(ChoosePokemon.attackP);
-const defenseP = parseInt(ChoosePokemon.defenseP);
-const speedP = parseInt(ChoosePokemon.speedP);
-const hp = parseInt(Player.hp);
-console.log(hp.value);
-const attack = parseInt(Player.attack);
-const defense = parseInt(Player.defense);
-const speed = parseInt(Player.speed);
-const armor = parseInt(Player.armor);
-const weapon = parseInt(Player.weapon);
-console.log(hp);
-const damage = (attack + weapon) - defenseP;
-const damageP = (attackP - defense);
-const mitigation = (defense + armor);
+class Combat extends React.Component{
+
+constructor(props){
+  super(props);
+  this.state = {
+  pokemon: props.ChoosePokemon,
+  player: props.Player,
+  isPokeDead: false,
+  isPlayerDead: false,
+  name: props.nameP,
+  hpP: parseInt(props.hpP),
+  attackP: parseInt(props.attackP),
+  defenseP: parseInt(props.defenseP),
+  speedP: parseInt(props.speedP),
+  hp: parseInt(props.hp),
+  attack: parseInt(props.attack),
+  defense: parseInt(props.defense),
+  speed: parseInt(props.speed),
+  armor: parseInt(props.armor),
+  weapon: parseInt(props.weapon),
+    };
+  // this.handleClick = this.handleClick.bind(this);
+}  
+// const [isPokeDead, setDeadPoke] = useState(false);
+// const [isPlayerDead, setDeadPlayer] = useState(false);
+// const [activePlayer, setActivePlayer] = useState(Player.character);
+// const [activePoke, setActivePoke] = useState(ChoosePokemon.pokemon);
 
 
-function endTurn(){return  <p>You survived the attack, your hp is now {hp}</p>;};
-function victory() {return <p>Congrats! you have defeated {ChoosePokemon.name} for {ChoosePokemon.xpP}</p>;};
-function defeat() {return <p>Congrats! You Died!</p>;};
+// damage = (attack + weapon) - defenseP;
+// damageP = (attackP - defense);
+// const mitigation = (defense + armor);
 
 
-if(hp < 1){
-  setDeadPlayer(true);
+
+endTurn = (props) => {return  <p>You survived the attack, your hp is now {props.Player.hp}</p>;};
+victory = (props) => {return <p>Congrats! you have defeated {ChoosePokemon.nameP} for {ChoosePokemon.xpP}</p>;};
+defeat = (props) => {return <p>Congrats! You Died!</p>;};
+
+deathCheck = (props) =>
+{ const hp = props.Player.hp;
+  const hpP = props.ChoosePokemon.hpP
+  if(hp < 1){
+  this.state.isPlayerDead(true);
 }
 if(hpP < 1){
-  setDeadPoke(true);
+  this.state.isPokeDead(true);
+}}
+
+takeDamage = (props) => { 
+  const mitigation = (props.Player.defense + props.Player.armor);
+  const damageP = (props.ChoosePokemon.attackP - props.Player.defense);
+  const player = this.state.player(player);
+  const damageFormula = (props.Player.hp = mitigation - damageP);
+  const newCharacter = this.state.player.concat(damageFormula)
+    this.setState({
+      player: newCharacter,
+    });
+    console.log(props.Player.hp)
 }
 
-function takeDamage(hp, mitigation, damageP) { return activePlayer(hp = mitigation - damageP);}
-function giveDamage(hpP, damage) { return activePoke(hpP = hpP - damage);}
+giveDamage = (props) => { 
+  const damage = (props.Player.attack + props.Player.weapon) - props.ChoosePokemon.defenseP;
+  const pokemon =  this.state.choosePokemon(pokemon);
+  const damageFormulaP = (props.ChoosePokemon.hpP = props.ChoosePokemon.hpP - damage);
+  const newPokemon = this.state.pokemon.concat(damageFormulaP)
+    this.setState({
+      pokemon: newPokemon,
+    });
+    console.log(this.state.hp)
+}
 
 
-  const hit = () => {
+hit = (props) => {
     var results = [];
+    const damage = (props.attack + props.weapon) - (props.defenseP);
+    const damageP = (props.attackP - props.defense);
 
     if(damage < 1) {
       damage = 1;
@@ -51,36 +88,47 @@ function giveDamage(hpP, damage) { return activePoke(hpP = hpP - damage);}
       damage = 1;
     }
 
-    if(speed > speedP){
-      giveDamage();
+    if(props.speed > props.speedP){
+      this.giveDamage();
+      this.deathCheck();
       /*eslint no-unused-expressions: ["error", { "allowTernary": true }]*/
-      (isPokeDead ?  victory() : takeDamage())
-      setActivePoke(hpP);
+      (props.isPokeDead ?  this.victory() : this.takeDamage())
+      this.setState({
+        pokemon: props.ChoosePokemon.hpP,
+      });
       /*eslint no-unused-expressions: ["error", { "allowTernary": true }]*/
-      (isPlayerDead ? defeat() : endTurn())
-      setActivePlayer(hp);
-    } else if(speedP > speed){
-      takeDamage();
+      (props.isPlayerDead ? this.defeat() : this.endTurn())
+      this.setState({
+        player: props.Player.hp,
+      })
+    } else if(props.speedP > props.speed){
+      this.takeDamage();
       /*eslint no-unused-expressions: ["error", { "allowTernary": true }]*/
-      (isPlayerDead ? defeat() : giveDamage())
-      setActivePlayer(hp);
+      (props.isPlayerDead ? this.defeat() : this.giveDamage())
+      this.setState({
+        player: props.Player.hp,
+      })
       /*eslint no-unused-expressions: ["error", { "allowTernary": true }]*/
-      (isPokeDead ? victory() : endTurn())
-      setActivePoke(hpP);
-    }console.log(hp.value);
-    return results;
-};
+      (props.isPokeDead ? this.victory() : this.endTurn())
+      this.setState({
+        pokemon: props.ChoosePokemon.hpP
+      });
+    }console.log(props.hp);
+
+}
+
+render(){
 
   return (
     <React.Fragment>
       <div className='combatTime'>
-        <button onClick={hit}>ATTACK!!!!</button>
-        <p>Your Remaining HP: {hp}</p>
-        <p>{name} Remaing HP: {hpP}</p>
+        <button onClick={this.state.hit}>ATTACK!!!!</button>
+        <p>Your Remaining HP: {this.state.hp}</p>
+        <p>{this.state.name} Remaing HP: {this.state.hpP}</p>
       </div>
     </React.Fragment>
-  )
-
+  );
+  }
 
 }
 
