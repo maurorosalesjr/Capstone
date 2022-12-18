@@ -56,7 +56,7 @@ function Loot() {
       <React.Fragment>
           <div style={looting} className="LootDisplaySection">
             {!lootChosen ? (
-          <button style={buttonStyle} onClick={lootGenerator}>Look Around</button>
+          <button style={buttonStyle} onClick={lootGenerator}>Open Treasure Chest!!!</button>
           ) : (
               <>
               <div>
