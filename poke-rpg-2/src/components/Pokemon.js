@@ -4,12 +4,12 @@ import PropTypes from "prop-types";
 import GameControl from './GameControl';
 
 const imgStlye = {
-  marginLeft: "55%",
+  marginLeft: "45%",
   marginRight: "5px",
-  marginTop: "20%",
+  marginTop: "17%",
   zIndex: "6",
   position: "absolute",
-  width: "100px",
+  width: "300px",
   hight: "auto",
   display: "block",
 }
