@@ -2,6 +2,58 @@ import React, { useState  } from 'react';
 import Axios from "axios";
 import PropTypes from "prop-types";
 
+const imgStlye = {
+  marginLeft: "55%",
+  marginRight: "5px",
+  marginTop: "20%",
+  zIndex: "6",
+  position: "absolute",
+  width: "100px",
+  hight: "auto",
+  display: "block",
+}
+
+const pokeStats = {
+  right: "5%",
+  zIndex: "4",
+  marginTop: "37%",
+  position: "absolute",
+  border: "2px solid black",
+  hight: "200px",
+  maxWidth: "25%",
+  width: "100%",
+  display: "block",
+  backgroundColor: "burlywood"
+}
+
+const buttonStyle = {
+  marginLeft: "55%",
+  marginRight: "5px",
+  marginTop: "20%",
+  zIndex: "6",
+  position: "absolute",
+  width: "100px",
+  hight: "auto",
+  display: "block",
+}
+
+const h4 = {
+  textAlign: "center",
+}
+
+
+const attack = {
+  left: "5%",
+  zIndex: "4",
+  marginTop: "37%",
+  position: "absolute",
+  border: "2px solid black",
+  hight: "200px",
+  maxWidth: "25%",
+  width: "100%",
+  display: "block",
+  backgroundColor: "burlywood"
+}
 function ChoosePokemon(props) {
   const [pokemonChosen, setPokemonChosen] = useState(false);
   const [pokemon, setPokemon] = useState({
@@ -34,15 +86,20 @@ function ChoosePokemon(props) {
     );
   };
 
+  const defeatPokemon = () => {
+      setPokemon(false)
+  }
+
       return (
         <React.Fragment>
           <div className="DisplaySection">
             {!pokemonChosen ? (
-          <button onClick={callPokemon}>Reveal Pokemon</button>
+          <button style={buttonStyle} onClick={callPokemon}>Reveal Pokemon</button>
           ) : (
               <>
-              <img src={pokemon.imgP} />
-              <h4>{pokemon.nameP}</h4>
+              <img style={imgStlye} src={pokemon.imgP} />
+              <div style={pokeStats}>
+              <h4 style={h4}>{pokemon.nameP}</h4>
               <ul>
                 <li>HP: {pokemon.hpP}</li>
                 <li>Attack: {pokemon.attackP}</li>
@@ -50,6 +107,10 @@ function ChoosePokemon(props) {
                 <li>Speed: {pokemon.speedP}</li>
                 <li>{pokemon.xpP}</li>
               </ul>
+              </div>
+              <button style={attack} onClick={defeatPokemon}>Attack!!!</button>
+
+
               </>
             )}
           </div>

@@ -1,6 +1,20 @@
 import React, { useState  } from 'react';
 import PropTypes from "prop-types";
 
+const playa = {
+  left: "32%",
+  zIndex: "4",
+  marginTop: "37%",
+  position: "absolute",
+  border: "2px solid black",
+  hight: "200px",
+  maxWidth: "32%",
+  width: "100%",
+  display: "block",
+  backgroundColor: "burlywood"
+}
+
+
 
 function Player(props){
   const [characterRolled, setCharacterRolled] = useState(false);
@@ -29,7 +43,7 @@ function Player(props){
 
   return(
     <React.Fragment>
-      <div className="letsRoll">
+      <div  style={playa} className="letsRoll">
         {!characterRolled ? (
           <button onClick={rollCharacter}>Roll Your Stats!</button>
         ) : (

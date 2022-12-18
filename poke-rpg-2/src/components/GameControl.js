@@ -3,6 +3,16 @@ import ChoosePokemon from "./Pokemon";
 import Loot from "./Loot";
 
 
+const buttonStyle = {
+  marginLeft: "55%",
+  marginRight: "5px",
+  marginTop: "20%",
+  zIndex: "6",
+  position: "absolute",
+  width: "100px",
+  hight: "auto",
+  display: "block",
+}
 
 function GameControl() {
   const [areaSearched, setAreaSearched] = useState(false);
@@ -22,7 +32,7 @@ function GameControl() {
     
     <div>
     {!areaSearched ? (
-      <button onClick={searchArea}>Search Area</button>
+      <button style={buttonStyle} onClick={searchArea}>Search Area</button>
     ) : (
       <div>
         <React.Fragment>

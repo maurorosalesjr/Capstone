@@ -1,5 +1,26 @@
 import React, { useState  } from 'react';
 
+const looting = {
+  marginLeft: "55%",
+  marginRight: "5px",
+  marginTop: "20%",
+  zIndex: "6",
+  position: "absolute",
+  width: "100px",
+  hight: "auto",
+  display: "block",
+}
+
+const buttonStyle = {
+  marginLeft: "55%",
+  marginRight: "5px",
+  marginTop: "20%",
+  zIndex: "6",
+  position: "absolute",
+  width: "100px",
+  hight: "auto",
+  display: "block",
+}
 
 function Loot() {
   const [lootChosen, setLootChosen] = useState(false);
@@ -18,9 +39,9 @@ function Loot() {
 
   return (
       <React.Fragment>
-          <div className="LootDisplaySection">
+          <div style={looting} className="LootDisplaySection">
             {!lootChosen ? (
-          <button onClick={lootGenerator}>Look Around</button>
+          <button style={buttonStyle} onClick={lootGenerator}>Look Around</button>
           ) : (
               <>
               <p>You Found: {loot}</p>

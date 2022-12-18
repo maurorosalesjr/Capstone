@@ -3,6 +3,18 @@ import Player from './Player';
 import ChoosePokemon from './Pokemon';
 import PropTypes from "prop-types";
 
+const attacking = {
+  left: "2%",
+  zIndex: "4",
+  marginTop: "43%",
+  position: "absolute",
+  border: "2px solid black",
+  hight: "200px",
+  maxWidth: "25%",
+  width: "100%",
+  display: "block"
+}
+
 class Combat extends React.Component{
 
 constructor(props){
@@ -39,8 +51,8 @@ constructor(props){
 
 
 endTurn = (props) => {return  <p>You survived the attack, your hp is now {props.Player.hp}</p>;};
-victory = (props) => {return <p>Congrats! you have defeated {ChoosePokemon.nameP} for {ChoosePokemon.xpP}</p>;};
-defeat = (props) => {return <p>Congrats! You Died!</p>;};
+victory = (props) => {return <p>Congrats! you have defeated {props.ChoosePokemon.nameP} for {props.ChoosePokemon.xpP}</p>;};
+defeat = () => {return <p>Congrats! You Died!</p>;};
 
 deathCheck = (props) =>
 { const hp = props.Player.hp;
@@ -121,7 +133,7 @@ render(){
 
   return (
     <React.Fragment>
-      <div className='combatTime'>
+      <div style={attacking}className='combatTime'>
         <button onClick={this.state.hit}>ATTACK!!!!</button>
         <p>Your Remaining HP: {this.state.hp}</p>
         <p>{this.state.name} Remaing HP: {this.state.hpP}</p>
